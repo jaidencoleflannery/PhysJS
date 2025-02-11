@@ -1,0 +1,28 @@
+{
+  "name": "physjs",
+  "version": "1.0.3",
+  "main": "dist/index.js",
+  "author": "Jaiden Cole Flannery",
+  "module": "dist/index.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaidencoleflannery/physJS.git"
+  },
+  "scripts": {
+    "reset": "echo \"Resetting physJS module\" && npm run build && npm link",
+    "build": "tsc "
+  },
+  "keywords": [
+    "math",
+    "physics",
+    "library",
+    "npm"
+  ],
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}
