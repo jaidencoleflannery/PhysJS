@@ -33,8 +33,8 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.uncertainty = exports.convert = void 0;
-const convert = __importStar(require("./conversions/convert"));
+exports.utilities = exports.convert = void 0;
+const convert = __importStar(require("./services/convert"));
 exports.convert = convert;
-const uncertainty = __importStar(require("./uncertainties/unc"));
-exports.uncertainty = uncertainty;
+const utilities = __importStar(require("./services/utilities"));
+exports.utilities = utilities;
