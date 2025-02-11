@@ -14,21 +14,32 @@ export function time (start: number, end: number) {
 }
 
 /* 
-This function finds average velocity. v = (Δx/Δt) = ((𝑥f−𝑥0)/(tf−t0)).
+This function finds velocity. v = (Δx/Δt) = ((𝑥f−𝑥0)/(tf−t0)).
+Finding average or instantaneous would be up to the user, average = longer distance. instantaneous = extremely tiny distance.
 */
-export function avg_vel (start_t: number, end_t: number, start_x: number, end_x: number) {
+export function vel (start_t: number, end_t: number, start_x: number, end_x: number) {
     return (disp(start_x, end_x) / time(start_t, end_t));
 }
 
 /* 
-This function finds instantaneous speed. speed = distance traveled divided by elapsed time.
+This function finds speed. speed = distance traveled divided by elapsed time.
 We just use the positive return from average velocity here.
+Finding average or instantaneous would be up to the user, average = longer distance. instantaneous = extremely tiny distance.
 */
-export function inst_speed (start_t: number, end_t: number, start_x: number, end_x: number) {
+export function speed (start_t: number, end_t: number, start_x: number, end_x: number) {
     const speed: number = avg_vel(start_t, end_t, start_x, end_x);
     if (speed >= 0) {
         return speed;
     } else {
         return (speed * -1);
     }
+}
+
+/*
+This function finds acceleration. a = (Δv/Δt) = ((vf-v0)/(tf−t0)).
+Finding average or instantaneous would be up to the user, average = longer distance. instantaneous = extremely tiny distance.
+*/
+export function accel (start_t: number, end_t: number, start_x: number, end_x: number) {
+    const accel: number = (avg_vel(start_t, end_t, start_x, end_x) / time(start_t, end_t));
+    return accel;
 }

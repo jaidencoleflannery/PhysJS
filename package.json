@@ -7,7 +7,7 @@
   "types": "index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jaidencoleflannery/physJS.git"
+    "url": "https://github.com/jaidencoleflannery/PhysJS"
   },
   "scripts": {
     "reset": "echo \"Resetting physJS module\" && npm run build && npm link",
@@ -20,7 +20,7 @@
     "npm"
   ],
   "license": "ISC",
-  "description": "",
+  "description": "A basic physics NPM library for quick calculations.",
   "devDependencies": {
     "tsx": "^4.19.2",
     "typescript": "^5.7.3"
