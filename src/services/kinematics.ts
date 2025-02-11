@@ -27,7 +27,7 @@ We just use the positive return from average velocity here.
 Finding average or instantaneous would be up to the user, average = longer distance. instantaneous = extremely tiny distance.
 */
 export function speed (start_t: number, end_t: number, start_x: number, end_x: number) {
-    const speed: number = avg_vel(start_t, end_t, start_x, end_x);
+    const speed: number = vel(start_t, end_t, start_x, end_x);
     if (speed >= 0) {
         return speed;
     } else {
@@ -40,6 +40,6 @@ This function finds acceleration. a = (Δv/Δt) = ((vf-v0)/(tf−t0)).
 Finding average or instantaneous would be up to the user, average = longer distance. instantaneous = extremely tiny distance.
 */
 export function accel (start_t: number, end_t: number, start_x: number, end_x: number) {
-    const accel: number = (avg_vel(start_t, end_t, start_x, end_x) / time(start_t, end_t));
+    const accel: number = (vel(start_t, end_t, start_x, end_x) / time(start_t, end_t));
     return accel;
 }
