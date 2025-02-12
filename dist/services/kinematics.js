@@ -2,8 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.disp = disp;
 exports.time = time;
-exports.avg_vel = avg_vel;
-exports.inst_speed = inst_speed;
+exports.vel = vel;
+exports.speed = speed;
+exports.accel = accel;
 /*
 This function finds displacement - mostly used for other larger functions. Displacement = (Δ𝑥 = (𝑥f−𝑥0)).
 Due to technicality, this is also viable for distance.
@@ -18,21 +19,31 @@ function time(start, end) {
     return (end - start);
 }
 /*
-This function finds average velocity. v = (Δx/Δt) = ((𝑥f−𝑥0)/(tf−t0)).
+This function finds velocity. v = (Δx/Δt) = ((𝑥f−𝑥0)/(tf−t0)).
+Finding average or instantaneous would be up to the user, average = longer distance. instantaneous = extremely tiny distance.
 */
-function avg_vel(start_t, end_t, start_x, end_x) {
+function vel(start_t, end_t, start_x, end_x) {
     return (disp(start_x, end_x) / time(start_t, end_t));
 }
 /*
-This function finds instantaneous speed. speed = distance traveled divided by elapsed time.
+This function finds speed. speed = distance traveled divided by elapsed time.
 We just use the positive return from average velocity here.
+Finding average or instantaneous would be up to the user, average = longer distance. instantaneous = extremely tiny distance.
 */
-function inst_speed(start_t, end_t, start_x, end_x) {
-    const speed = avg_vel(start_t, end_t, start_x, end_x);
+function speed(start_t, end_t, start_x, end_x) {
+    const speed = vel(start_t, end_t, start_x, end_x);
     if (speed >= 0) {
         return speed;
     }
     else {
         return (speed * -1);
     }
+}
+/*
+This function finds acceleration. a = (Δv/Δt) = ((vf-v0)/(tf−t0)).
+Finding average or instantaneous would be up to the user, average = longer distance. instantaneous = extremely tiny distance.
+*/
+function accel(start_t, end_t, start_x, end_x) {
+    const accel = (vel(start_t, end_t, start_x, end_x) / time(start_t, end_t));
+    return accel;
 }
