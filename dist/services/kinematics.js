@@ -22,16 +22,16 @@ function time(start, end) {
 This function finds velocity. v = (Δx/Δt) = ((𝑥f−𝑥0)/(tf−t0)).
 Finding average or instantaneous would be up to the user, average = longer distance. instantaneous = extremely tiny distance.
 */
-function vel(start_t, end_t, start_x, end_x) {
-    return (disp(start_x, end_x) / time(start_t, end_t));
+function vel(x, t) {
+    return (x / t);
 }
 /*
 This function finds speed. speed = distance traveled divided by elapsed time.
 We just use the positive return from average velocity here.
 Finding average or instantaneous would be up to the user, average = longer distance. instantaneous = extremely tiny distance.
 */
-function speed(start_t, end_t, start_x, end_x) {
-    const speed = vel(start_t, end_t, start_x, end_x);
+function speed(x, t) {
+    const speed = vel(x, t);
     if (speed >= 0) {
         return speed;
     }
@@ -43,7 +43,7 @@ function speed(start_t, end_t, start_x, end_x) {
 This function finds acceleration. a = (Δv/Δt) = ((vf-v0)/(tf−t0)).
 Finding average or instantaneous would be up to the user, average = longer distance. instantaneous = extremely tiny distance.
 */
-function accel(start_t, end_t, start_x, end_x) {
-    const accel = (vel(start_t, end_t, start_x, end_x) / time(start_t, end_t));
+function accel(x, t) {
+    const accel = (vel(x, t) / t);
     return accel;
 }

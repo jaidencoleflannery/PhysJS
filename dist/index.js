@@ -33,8 +33,10 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.utilities = exports.convert = void 0;
+exports.kinematics = exports.utilities = exports.convert = void 0;
 const convert = __importStar(require("./services/convert"));
 exports.convert = convert;
 const utilities = __importStar(require("./services/utilities"));
 exports.utilities = utilities;
+const kinematics = __importStar(require("./services/kinematics"));
+exports.kinematics = kinematics;
